@@ -8,14 +8,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "heroku-postbuild": "ng build --prod && npm install -g http-server-spa"
-  }, 
+  },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^ 12.2.13",
-    "@angular/cli": "^12.2.13",
+    "@angular/animations": "^12.2.13",
     "@angular/common": "^12.2.13",
     "@angular/compiler": "^12.2.13",
-    "@angular/compiler-cli": "^12.2.13",
     "@angular/core": "^12.2.13",
     "@angular/forms": "^12.2.13",
     "@angular/localize": "^12.2.13",
@@ -29,12 +27,9 @@
     "@okta/okta-signin-widget": "^5.13.0",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.6.1",
-    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
-    "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
-    "typescript": "~4.3.5",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -50,9 +45,5 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.3.5"
-  },
-  "engines": {
-    "node": "14.18.0",
-    "npm": "6.14.15"
   }
 }
