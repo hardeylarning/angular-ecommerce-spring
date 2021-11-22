@@ -1,0 +1,33 @@
+
+<div class="container">
+    <table class="table table-dark table-responsive">
+        <thead class="table-danger">
+            <tr class="table-secondary text-dark">
+                <th>Image</th>
+                <th>Sku</th>
+                <th >Name</th>
+                <th>Description</th>
+                <th>Unit Price</th>
+                <th>Active</th>
+                <th>Date Created</th>
+                <th>Last Updated</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let p of products">
+                <td class="align-middle">
+                    <img src="{{p.imageUrl}}" class="" height="50" alt="">
+                </td>
+                <td>{{p.sku}}</td>
+                <td class="align-middle">{{p.name}}</td>
+                <td>{{p.description}}</td>
+                <td class="align-middle">{{p.unitPrice | currency : 'USD'}}</td>
+                <td class="align-middle">{{p.active}}</td>
+                <td>{{p.dateCreated}}</td>
+                <td>{{p.lastUpdated}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

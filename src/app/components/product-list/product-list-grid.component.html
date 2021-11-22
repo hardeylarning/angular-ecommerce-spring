@@ -1,0 +1,63 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div *ngFor="let p of products" class="col-md-3">
+                    <div class="product-box">
+                        <a routerLink ="/products/{{p.id}}" routerLinkActive="router-link-active" >
+                            <img src="{{p.imageUrl}}" class="img-responsive" alt="">
+                        </a>
+                        
+                        <a routerLink="/products/{{p.id}}">
+                            <h1>{{p.name}}</h1>
+                        </a>
+                        <div class="price">{{p.unitPrice | currency : 'USD'}}</div>
+                        <button (click)="addToCart(p)" class="btn btn-primary btn-sm">Add to cart</button>
+                    </div>
+                </div>
+                <!-- if products is not found display -->
+                <div *ngIf="products?.length == 0" 
+                    class="alert alert-warning col-md-12" role="alert">
+                    No Product Found
+                </div>
+            </div>
+
+            <!-- begin footer -->
+
+            <div class="footer-pagination">
+                <div class="row">
+                    <div class="col-md-6">
+            
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <ngb-pagination [(page)]="thePageNumber" [pageSize]="thePageSize" [maxSize]="5"
+                                    [collectionSize]="theTotalElements" (pageChange)="listProducts()"
+                                    [boundaryLinks]="true">
+            
+                                </ngb-pagination>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <span class="">Page Size
+                                        <select (change)="updatePageSize($any($event).target.value)" class="text-center form-control">
+                                            <option selected="true">5</option>
+                                            <option>10</option>
+                                            <option>20</option>
+                                            <option>50</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- end footer -->
+        </div>
+    </div>
+</div>
